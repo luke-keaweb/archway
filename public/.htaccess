@@ -1,0 +1,46 @@
+RewriteEngine on
+
+# redirect non-existent requests for routing
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /index.php [NC,L,QSA]
+
+
+<IfModule mod_headers.c>
+    Header set Cache-Control "max-age=2764800"
+</IfModule>
+
+<IfModule mod_expires.c>
+  # Turn on the module.
+  ExpiresActive on
+  # Set the default expiry times.
+  ExpiresDefault "access plus 1 second"
+  ExpiresByType image/jpg "access plus 2 months"
+  ExpiresByType image/svg+xml "access plus 2 months"
+  ExpiresByType image/gif "access plus 2 months"
+  ExpiresByType image/jpeg "access plus 2 months"
+  ExpiresByType image/png "access plus 2 months"
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType text/javascript "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType image/ico "access plus 2 months"
+  ExpiresByType image/x-icon "access plus 2 months"
+</IfModule>
+
+
+# Try to block some annoying bots
+<IfModule mod_setenvif.c>
+  <IfModule mod_authz_host.c>
+    SetEnvIfNoCase User-Agent "Barkrowler" bad_bot
+    SetEnvIfNoCase User-Agent "test-bot" bad_bot
+    SetEnvIfNoCase User-Agent "thesis-research-bot" bad_bot
+    SetEnvIfNoCase User-Agent "fidget-spinner-bot" bad_bot
+    SetEnvIfNoCase User-Agent "DotBot/1.2" bad_bot
+    SetEnvIfNoCase User-Agent "bingbot/2.0" bad_bot
+    SetEnvIfNoCase User-Agent "PetalBot" bad_bot
+    SetEnvIfNoCase User-Agent "Bytespider" bad_bot
+    SetEnvIfNoCase User-Agent "MJ12bot" bad_bot
+    SetEnvIfNoCase User-Agent "FriendlyCrawler" bad_bot
+    Deny from env=bad_bot
+  </IfModule>
+</IfModule>

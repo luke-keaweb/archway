@@ -1,0 +1,1356 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;400;600&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap'); */
+
+/*
+🖼
+📁
+📂
+🗃
+🗂
+🏢
+🏛
+🎥
+📻
+🗄
+🗑
+🔑
+💿
+📃
+📄
+🗺
+📷
+*/
+
+body {
+  font-size: 16px;
+  color: #e7e7e7;   /* a subtle grey */
+
+  font-family: 'Nunito Sans', sans-serif;
+
+  font-weight: 400;
+  background-color: #212121;
+
+  background: linear-gradient(rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.80)), url('/assets/images/bg.jpg') fixed;
+  /* background-image: url('test.jpg'); */
+
+  /* background-color: #424242; */
+  margin: 0;
+  padding: 0;
+}
+
+
+/* shows when htmx is loading a new page */
+body.htmx-request:before {
+  content: ' ';
+  width: 100%;
+  height: 2px;
+  background-color: #35cdf3;;
+  display: block;
+  position: fixed;
+  animation: pulse 1.3s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.6; }
+  100% { opacity: 1; }
+}
+
+
+
+
+* {
+	box-sizing: border-box;
+}
+
+h1, h2, h3, h4 {
+  /* font-family: Raleway, Verdana, sans-serif; */
+  font-weight: 700;
+}
+
+
+header {
+  padding: 1em 2em 0 2em;
+}
+
+.main-content {
+  margin: 0 1.5em 1em 1.5em;
+  padding: 1.5em 1.5em 2em 1.5em;
+  border-radius: 6px;
+  /* background-color: #424242; */
+  background-color: rgba(66, 66, 66, 0.85);
+
+  /* size without questions */
+  /* min-height: calc( 100vh - 190px ); */
+  min-height: calc( 100vh - 383px );   /* size WITH questions */
+
+  border: 1px solid #4D4D4D;
+}
+
+
+footer {
+  background-color: #212121;
+  padding: 0.3em 2em;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+footer p {
+  flex: 0 1 auto;
+  /* display: inline-block; */
+}
+
+footer .rendered {
+  flex: 0 1 auto;
+  font-size: 0.7em;
+  color: #ADADAD;
+  /* text-align: right;  */
+}
+
+
+h2 {
+  font-size: 1.7em;
+  margin-top: 0.4em;
+  margin-bottom: 0.4em;
+}
+
+/* h2.error,
+h3.error {
+  font-style: italic;
+} */
+
+h1.header {
+  font-size: 1.7em;
+  margin-bottom: 0.1em;
+  margin-top: 0em;
+  text-align: center;
+}
+
+/* default p styles */
+p {
+  margin: 0.6em 0;
+}
+
+p.header {
+  font-size:0.8em;
+  margin-top:0.1em;
+  font-style: italic;
+  text-align: center;
+}
+
+.error {
+  color: orange;
+}
+
+.result_description {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.center {
+  text-align: center;
+}
+
+label {
+  font-size: 1.1em;
+  font-weight: 600;
+}
+
+form {
+  margin-bottom: 0;
+}
+
+.search_box {
+  border: 1px solid #6F6F6F;
+  border-radius: 10px;
+  padding: 1em 2em;
+  width: 100%;
+  max-width: 1100px;
+  margin: auto;
+  margin-bottom: 2em;
+}
+
+.search_box h3 {
+  margin-top: 0.4em;
+}
+
+.search_box .toggle_info {
+  display: block;
+  text-align: center;
+}
+
+.military .toggle_info {
+  /* display: block; */
+  text-align: left;
+  margin-left: 125px;
+  margin-bottom: 1em;
+}
+
+
+.search_box .full_info {
+  margin: 0;
+}
+
+.search_box label {
+  display: inline-block;
+  width: 115px;
+  text-align: right;
+  margin-right:6px;
+  margin-bottom: 16px;
+}
+
+.search_box label.long_label {
+  margin-left: 125px;
+  width: calc(100% - 125px);
+  text-align: left;
+  margin-bottom: 6px;
+  margin-top: 1em;
+}
+
+/* radio labels are different */
+.search_box label.radio {
+  display: inline-block;
+  width: min-content;
+  text-align: left;
+  padding-left:2px;
+  margin-right: 1.5em;
+  cursor: pointer;
+  font-size: 0.9em;
+  /* margin-bottom: 16px; */
+}
+
+.search_box label.radio:hover {
+  color: orange;
+}
+
+input[type="radio"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  vertical-align: text-top;
+}
+
+/* Provide visual feedback on the checkbox labels that they can be clicked */
+label.checkbox { cursor: pointer; }
+label.checkbox:hover { color: orange; }
+
+/* The main search keywords input */
+.keywords_search {
+  font-size: 25px;
+  padding: 10px;
+  margin: 10px 15px 20px 0px;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: calc( 100% - 215px );
+}
+
+form button {
+  width: 200px;
+
+  padding: 10px 20px 10px 5px;
+  font-size: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 2px solid #4D4D4D;
+  border-radius: 5px;
+  background-color: #212121;
+  color: #35cdf3;
+}
+
+button svg {
+  max-height: 20px;
+}
+
+button svg .icon-outline {
+  fill: white;
+}
+
+form button:hover {
+  background-color: #323232;
+}
+
+form button:active {
+  color: #FF9300;
+}
+
+
+button.small_button {
+  padding: 4px 20px;
+  font-size: 18px;
+}
+
+button.military_filter {
+  margin-top: 0.4em;
+}
+
+.mobile_search_button {
+  display: none;
+}
+
+
+.search_small {
+  font-size: 18px;
+  padding: 4px 8px;
+  width: 50%;
+}
+
+input, select, textarea {
+  font-size: 18px;
+  padding: 4px 8px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+textarea {
+  margin-top: 0px;
+  margin-bottom: 1.5em;
+  margin-left: 125px;
+  width: calc(50%);
+  height: 220px;
+}
+
+.search_date {
+  width: 5em;
+}
+
+select {
+  font-weight: 400;
+  /* color: #35cdf3;
+  background-color: #212121; */
+  margin: 0 0 10px 0;
+  max-width: calc( 100% - 120px );
+}
+
+/* special handling for series search result radio buttons + labels */
+#series_search_results label.radio {
+  width: auto;          /* Adjusts width to content */
+  max-width: calc( 100% - 175px);
+  vertical-align: text-top;
+}
+#series_search_results  input[type="radio"] {
+  vertical-align: top;
+}
+#series_search_results label.radio .highlight {
+  color: orange;
+}
+
+
+/* Facets stuff */
+
+div.facets {
+  max-width: 80%;
+  width: max-content;
+  margin: 1em auto;
+  padding: 0.5em;
+
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: flex-start; */
+  /* justify-content: ; */
+}
+
+.facets span {
+  line-height: 1.9em;
+}
+
+.facet_chosen,
+.facet_select {
+  flex: 0 1 auto;
+
+  font-weight: bold;
+  font-size: 1.1em;
+  padding: 0.4em;
+  border-radius: 8px;
+  /* border: 1px solid #4D4D4D; */
+  background-color: #212121;
+  color: white;
+  margin: 0 1em 1em 0;
+}
+
+.facet_select {
+  border: 1px solid #30a2be;
+  width: 130px;
+}
+
+.facet_chosen {
+  /* border: 1px solid orange; */
+  border: 1px solid #c78408;      /* orange mixed with 75% opacity on #212121 bg */
+  width: max-content;
+  max-width: max-content;
+}
+
+/* the first item in facet_select and facet_chosen is always the 'label' of the dropdown */
+.facet_chosen option:first-child,
+.facet_select option:first-child {
+  display: none;
+}
+
+
+
+
+input[type="checkbox"] {
+  width: 22px;
+  height: 22px;
+  vertical-align: middle;
+}
+
+::placeholder {
+  color: rgba(66,66,66,.6);
+}
+
+.form-section {
+  width: 49.5%;
+  display: inline-block;
+  /* padding: 1em;
+  border: 1px solid green; */
+}
+
+.facet_label {
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-right: 0.5em;
+}
+
+
+a, a:link, a:visited {
+  text-decoration: none;
+  color: #35cdf3;
+  font-weight: 600;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a.break-word {
+  /* prevents long URL strings from breaking page layout
+  eg http://archway/entity.php?code=AERA */
+  word-break: break-word;
+}
+
+hr {
+  margin-top: 6px;
+  border-bottom: 1px solid #4D4D4D;
+}
+
+
+
+button.pdf {
+  display: inline-block;
+  margin-top: -10px;
+  margin-bottom: 10px;
+
+  padding: 5px 18px;
+  border: 1px solid rgba(166,166,166, 0.5);
+  border-radius: 5px;
+
+  background-color: #212121;
+
+  font-size: 1.2em;
+  color: #0DBFEA;
+  cursor: pointer;
+}
+
+button.pdf:hover {
+  background-color: #323232;
+}
+
+
+label.info {
+
+  display: inline-block;
+  width: 120px;
+  padding-right: 7px;
+  margin-top: 6px;
+
+  color: #e7e7e7;   /* a subtle grey */
+  font-weight: 300;
+  font-size: 16px;
+
+  text-align: right;
+  vertical-align:top;
+}
+
+div.info {
+  color: white;
+  font-weight: 400;
+  display: inline-block;
+  max-width: calc( 100% - 125px - 30px );    /* in theory this should be OK at 160 ... is it because of the table padding?  */
+  margin-top: 6px;
+}
+
+div.info h3 {
+  /* margin-top: 0px; */
+  display: inline-block;
+}
+
+/* On the Entity page, we have lots of breathing room */
+.main-content > label.info { width: 210px; }
+.main-content > div.info { max-width: calc( 100% - 220px - 30px ); }
+
+/* if the generic Info section is skinny, we switch to labels above info */
+.plain-list label.info {
+  text-align: left;
+  width: auto;
+}
+.plain-list div.info {
+  display: block;
+  max-width: 100%;
+  padding-left: 10px;
+  margin-bottom: 5px;
+  margin-top: 2px;
+}
+
+
+div.info p {
+  margin: 0.4em 0;
+}
+
+div.info p:first-child {
+  margin-top:0px;
+}
+
+div.info p:last-child {
+  margin-bottom:0px;
+}
+
+.record_type {
+  /* color: #4BD5E7; */
+  font-size: 1.4em;
+  font-weight: 600;
+  display: inline;
+}
+
+.result_table {
+}
+
+/* if the result table is under an h3 label, we want to 'tab it out' from the left a bit */
+.tabbed .result_table {
+  margin-top: 6px;
+  margin-left: 1em;
+}
+
+.result_set {
+  margin: 1.5em 0 2.5em 0;
+  /* clear:both; */
+}
+
+/* allow URLs in any Full Info block (eg History) to have line-breaks and not break its container */
+.full_info a {
+  word-break: break-word;
+}
+/* ... but not on Show Artwork links */
+.full_info a.view-online-link {
+  word-break: normal;
+  margin-top: 2px;
+}
+
+.toggle_result_options {
+  float: right;
+  margin-bottom: 0.8em;
+}
+
+.search_options {
+  margin: auto;
+  width: 100%;
+  max-width: 960px;
+
+  clear: both;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 0.5em;
+}
+
+/* .search_options.no_results {
+  display: flex;
+} */
+
+.search_options > span {
+  flex: 0 1 auto;
+  font-size: 0.8em;
+
+  line-height: 27px;
+  padding: 0.3em 0.6em;
+  margin: 0.2em 0.5em;
+
+  border-radius: 5px;
+  background-color: #323232;
+
+  text-indent: -23px;
+  padding-left: 28px;
+
+}
+
+.search_options > span:hover {
+  background-color: #212121;
+}
+
+
+.full_entity_info {
+  display: none;
+  margin-bottom: 10px;
+}
+
+/* .full_info { */
+  /* display: none; */
+  /* margin: 0.5em 0; */
+/* } */
+
+/* div.info .full_info {
+  display: none;
+} */
+
+.viewer > td {
+  padding: 1em 2em 2em 2em;
+}
+
+.viewer img.loading {
+  display: block;
+  margin: auto;
+}
+
+.justified-gallery {
+  margin-bottom: 1.3em;
+}
+
+
+/* TO DO: this needs renaming, its really the main title of the record */
+.result_table .toggle_info {
+  color: white;
+}
+
+.result_table td.digital-toggled {
+  background-color: #373737;
+}
+
+.result_table .viewer {
+  background-color: #373737;
+  padding: 1em 0.5em 0.5em 0.5em;
+  border-radius: 5px;
+}
+
+.result_table details.full_info[open] {
+  background-color: #373737;
+  /* padding: 0 0.5em 0.5em 0.5em; */
+  border-radius: 5px;
+}
+
+.plain details.full_info[open] {
+  padding: 0;
+}
+
+
+/* Entity view has a truncated list version of the toggle Full Info span/div pair */
+li > .toggle_info {
+  /* padding-left: 0.3em; */
+}
+
+.toggle_info::marker {
+  color: #FF9C15;
+  font-size: 1.2em;
+  margin-right: 1px;
+}
+
+.toggle_result_options,
+.toggle_info,
+.toggle_images,
+.toggle_highlight,
+.toggle_all {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.toggle_highlight:hover,
+.toggle_result_options:hover,
+.toggle_info:hover {
+  text-decoration: underline;
+}
+
+
+
+.pagination {
+  /* font-size: 1.1em; */
+  font-weight: 600;
+}
+
+div.pagination_outer {
+  text-align: center;
+}
+
+div.pagination {
+  overflow-y: auto;
+  /* max-height: 57px; */
+  max-width: 100%;
+  padding-bottom: 12px;
+  white-space:nowrap;
+  display: inline-block;
+}
+
+a.pagination {
+  display: inline-block;
+  margin-right: 3px;
+  padding: 4px 10px;
+}
+
+a.live {
+  border: 1px solid #e7e7e7;
+  border-radius: 6px;
+  color: #e7e7e7;   /* subtle grey */
+}
+
+.csv-export {
+  text-align: right;
+  display: block;
+}
+
+
+.access.view-online { border-right: 1px solid #0043B4; }
+.access.open-access { border-right: 1px solid #00D85A; }
+.access.restricted-access { border-right: 1px solid #DF0000; }
+.access.partial-access { border-right: 1px solid #FF9300; }
+
+
+
+span.technical_info {
+  /* color: #0DBFEA; // ASH blue */
+  color: #35cdf3;       /*  SA forums blue */
+  font-weight: 600;
+  font-size: 1.3em;
+  float: right;
+  cursor: pointer;
+}
+
+div.technical_info {
+  display: none;
+  border: 1px solid #35cdf3; ;
+  border-radius: 10px;
+  padding: 1.5em 2em;
+  margin: 1em 0;
+  max-width: calc(100% - 30px);
+  word-break: break-word;
+}
+
+pre {
+  max-width:100%;
+  white-space: pre-wrap;
+}
+
+.keywords {
+  color: orange;
+}
+
+summary:hover .highlight {
+  color: orange;
+}
+
+a.always_highlight,
+.always_highlight {
+  color: orange;
+}
+
+
+
+/* TABLE STYLING */
+
+table {
+  table-layout: auto;
+  border-collapse: collapse;
+  /* min-width: 70%; */
+}
+
+/* tr:first-child td, */
+thead td,
+thead th,
+tr:first-child th {
+  /* color: #ADADAD; */
+  color: #e7e7e7;   /* a subtle grey */
+  font-weight: 300;
+
+	border-bottom: 1px solid #4D4D4D;
+	vertical-align: bottom;
+}
+
+/* sortable tables */
+thead td,
+thead th {
+  cursor: pointer;
+}
+
+td, th {
+  color: white;
+  text-align: left;
+	vertical-align: top;
+	padding: 6px 10px;
+  border: none;
+}
+
+/* Allows borders in History section tables, eg AAAC */
+div.info td,
+div.info th {
+  border: 1px solid white;
+}
+
+/* Ridiculous hack to make the table row insertion work on the Entity page */
+div.info table.plain td {
+  padding: 0;
+  border: none;
+}
+
+
+tr.viewer {
+}
+
+.result_table .viewer {
+
+}
+
+td.tbl_name {
+  /* min-width: 60%; */
+}
+
+td > a.view-online-link {
+  /* text-align:center; */
+  vertical-align: top;
+  /* display: block; */
+}
+
+td.digital-toggled a.view-online-link {
+  color: orange;
+}
+
+
+
+/* a.view-online-link, */
+.viewer a.htmx-request,
+a.add_row.htmx-request {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  /* width: 120px;
+  height: 70px; */
+}
+
+.viewer a.htmx-request:after,
+a.add_row.htmx-request:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, rgba(0,0,0,0.5), transparent);
+  animation: loading 1s infinite;
+}
+
+@keyframes loading {
+  to {
+    left: 100%;
+  }
+}
+
+
+
+
+img {
+  display: block;
+  /* max-width:100%;  */
+}
+
+audio {
+  width: 600px;
+  display: block;
+}
+
+audio,
+.full-image {
+  max-width:100%;
+  margin-bottom: 1.3em;
+}
+
+video {
+  width: 600px;
+  max-width:100%;
+  max-height: 90vh;
+  margin-bottom: 1.3em;
+}
+
+
+
+/* Thumbnails are hidden in various table rows by default */
+.tbl_flickr img.thumb,
+td.tbl_record img.thumb,
+td.tbl_name img.thumb,
+td.tbl_scan img.thumb,
+td div.thumb-overlay {
+  display: none;
+  visibility: hidden;
+}
+
+td.tbl_digitalmedia {
+  padding-bottom: 8px;
+}
+
+/* But shown in the Digital Media column */
+td.tbl_digitalmedia img.thumb {
+  display: block;
+  visibility: initial;
+
+  height: 70px;
+  width: 120px;
+  object-fit: cover;
+
+  font-size: 0.6em;   /* to minimise ugliness of alt text if the image doesn't load */
+
+  /* margin-bottom: 8px; */
+  border: 1px solid rgba(66,66,66,.85);   /* to prevent an ugly effect when we hover over the image */
+  background-color: rgba(256,256,256,.4); /*  creates a visible rectangle in case the thumb doesn't load */
+}
+
+td.tbl_digitalmedia img.map-plan,
+td.tbl_digitalmedia img.artwork,
+td.tbl_digitalmedia img.photograph {
+  height: auto;
+  max-height: 150px;
+  min-height: 70px;  /* so we still have a rectangle when the thumb doesn't actually load  */
+}
+
+td.tbl_digitalmedia img.thumb:hover,
+a.digital-toggled img.thumb {
+  border: 1px solid #FF9C15;
+}
+
+.viewer a,
+a.add_row {
+  position: relative;
+}
+
+td.tbl_scan > a.add_row {
+  display: inline-block;
+}
+
+/* td.tbl_digitalmedia > a.add_row .thumb-overlay {
+  display: block;
+  visibility: initial;
+  height: 22px;
+  width: 22px;
+  position: absolute;
+  top: 58px;
+  left: 81px;
+  border-right: 1px solid #FF9C15;
+  border-bottom: 1px solid #FF9C15;
+} */
+
+/* td.tbl_digitalmedia > a.add_row:hover .thumb-overlay,
+td.digital-toggled > a.add_row .thumb-overlay {
+  top: 42px;
+  left: 82px;
+  border-right: 2px solid #FF9C15;
+  border-bottom: 2px solid #FF9C15;
+} */
+
+/* show orange border in table when we embed an image */
+/* cute, not sure it works */
+/* td:first-child.digital-toggled,
+tr.viewer td {
+  border-left: 1px solid #FF9C15;
+} */
+
+/* hide Show Media link in Digital Media column */
+td.tbl_digitalmedia > a.view-online-link {
+  display: none;
+}
+
+
+td .full_info img.thumb {
+  display: block;
+  visibility:initial;
+}
+
+/* hidden by default */
+.result_table .tbl_name > .view-online-link,
+.result_table .tbl_record > .view-online-link,
+.below-title,
+.above-title {
+  display: none;
+}
+
+/* when has_digital = true we show the code on the line above the title */
+.result_table td.tbl_record .above-title {
+  display: block;
+}
+
+.full_info img.thumb {
+  max-height: 200px;
+}
+
+ul, ol {
+  margin: 0;
+}
+
+ul.plain {
+  padding: 0;
+  list-style-type: none;
+}
+
+.plain li {
+  margin-bottom: 4px;
+}
+
+.plain li:last-child {
+  margin-bottom: 2px;
+}
+
+div.info ul.plain {
+  margin-bottom: 0;
+}
+
+
+
+/* Gallery of thumbnails on media pages */
+
+.thumb-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: space-between; */
+
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+
+.thumb-gallery img {
+  flex: 1 1 auto;
+  margin: 5px;
+  min-width: 100px;
+  min-height: 160px;
+  background-color: rgba(256,256,256,.4); /*  creates a visible rectangle in case the thumb doesn't load */
+}
+
+
+p.attribution {
+  text-align: center;
+  font-size: 0.8em;
+  font-style: italic;
+  margin: 2em auto 0 auto;
+}
+
+
+
+.questions {
+  margin: 0 1.5em 1em 1.5em;
+  padding: 1em 2em;
+  border-radius: 6px;
+  background-color: rgba(66, 66, 66, 0.85);
+  border: 1px solid #4D4D4D;
+}
+
+.questions p,
+.questions ul {
+  margin-left: 20px;
+}
+
+.questions summary {
+  list-style: none;
+  cursor:pointer;
+  color: #35cdf3;       /*  SA forums blue */
+  margin: 7px 0;
+}
+
+.questions summary:hover {
+	text-decoration: underline;
+}
+
+/* This is required to flip the magnifying glass around */
+.questions summary span {
+	display: inline-block;
+}
+
+/* flip the magnifying glass around */
+.questions details[open] summary span {
+  transform: scaleX(-1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Main menu */
+.nav {
+  display: flex;
+  margin-bottom: -1px;  /* to overlap / merge with the border of main-content div */
+  padding-left: 0;
+  list-style: none;
+}
+
+.nav > a,
+.nav > div > span {
+  /* Combined styles for <a> and <span> */
+  display: inline-block;
+  padding: 5px 20px;
+  margin-right: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #35cdf3;
+  background-color: #323232;
+  border: 1px solid #4D4D4D;
+  /* border-bottom: 0; */
+  border-radius: 7px 7px 0 0;
+  box-shadow: 2px -1px 2px 0px rgba(0, 0, 0, .25);
+}
+
+.nav a:hover,
+.nav a.active {
+  color: #FF9300;
+  background-color: rgba(66, 66, 66, 0.85);
+  border-bottom: 1px solid #38393c;
+  /* border-bottom: 0; */
+}
+
+/* Submenus */
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown .submenu {
+  display: none;
+  position: absolute;
+  z-index: 1000;
+  left: 0;
+  top: 29px;
+
+  background-color: #212121;
+  background: linear-gradient(rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.80)), url('/assets/images/bg.jpg') fixed;
+
+	min-width:160px;
+
+  border: 1px solid #4D4D4D;
+  border-top: 0;
+	border-top-right-radius: 7px;
+	border-bottom-left-radius: 7px;
+	border-bottom-right-radius: 7px;
+}
+
+.dropdown:hover .submenu {
+  display: block;
+}
+
+.submenu a {
+  display: block;
+  padding: 4px 6px;
+  text-decoration: none;
+}
+
+.nav .submenu a:hover,
+.nav .submenu a.active {
+  border-bottom: 0;
+  /* border-bottom: 0; */
+}
+
+
+
+
+
+@media (min-width: 1500px) {
+  /* more breathing room for labels if we have a nice wide screen */
+  label.info { width: 180px; }
+  div.info { max-width: calc( 100% - 190px - 30px ); }
+}
+
+
+
+@media (max-width: 900px) {
+
+  /* shrink the menu tabs */
+  .nav > div > span
+  .nav > a { padding: 3px 13px; margin-right:6px; }
+
+  /* shrink the header */
+  header { padding: 1em 1em 0 1em; }
+  h1.header { font-size: 1.5em; }
+
+  /* Make content more space efficient */
+  .main-content { margin: 0 1em; padding: 1em; }
+  .questions { margin: 1em 1em; padding: 1em; }
+
+  /* Adjust search box to fit, change border to a rule */
+	.search_box { padding: 1em; border: none; border-radius: 0; border-bottom: 1px solid #4D4D4D; }
+  .keywords_search { font-size: 20px; }
+  form button { font-size: 20px; }
+
+  /* Shrink most of the results table so we just see the standard info */
+  table.result_table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 1em;
+  }
+
+  .result_table .tbl_name,
+  .result_table .tbl_record {
+    background-color: #373737;
+    padding: 0.7em;
+    border-radius: 5px;
+  }
+
+  /* access level colour coding     */
+  .access.view-online .tbl_name { border-right: 1px solid #0043B4; }
+  .access.open-access .tbl_name { border-right: 1px solid #00D85A; }
+  .access.restricted-access .tbl_name { border-right: 1px solid #DF0000; }
+  .access.partial-access.tbl_name { border-right: 1px solid #FF9300; }
+
+  .access.view-online .tbl_record { border-right: 1px solid #0043B4; }
+  .access.open-access .tbl_record { border-right: 1px solid #00D85A; }
+  .access.restricted-access .tbl_record { border-right: 1px solid #DF0000; }
+  .access.partial-access.tbl_record { border-right: 1px solid #FF9300; }
+
+  .result_table thead,
+  .result_table .tbl_id,
+  .result_table .tbl_location,
+  .result_table .tbl_heldat,
+  .result_table .tbl_date,
+  .result_table .tbl_scan,
+  .result_table .tbl_digitalmedia,
+  .result_table .tbl_browse {
+    display: none;
+  }
+
+  .below-title,
+  .above-title {
+    display: block;
+  }
+  .above-title {
+    display: block;
+    margin-bottom: 5px;
+  }
+  .below-title {
+    margin-left: 17px;
+    margin-top: 5px;
+    color: #ccc;
+  }
+
+  /* Thumbnails can show by default */
+  td.tbl_record img.thumb,
+  td.tbl_name img.thumb,
+  td.tbl_scan img.thumb {
+    display: block;
+    visibility: visible;
+    float: right;
+    margin-left: 8px;
+    margin-bottom: 3px;
+  }
+
+  td.tbl_record > a.htmx-request,
+  td.tbl_name > a.htmx-request {
+    /* to do: this needs fixing on some elements */
+    display: block;
+    float: right;
+  }
+
+  td .full_info img.thumb {
+    float:none;
+    margin-left: 0;
+  }
+
+  .result_table .tbl_name .full_info .view-online-link {
+    display: block;
+  }
+
+
+
+
+  /* On the Entity page, shrink labels */
+  .main-content > label.info { width: 150px; }
+  .main-content > div.info { max-width: calc( 100% - 160px ); }
+
+  /* move lightgallery arrows further to left/right to make room for the image */
+  html body .lg-prev { left: 0; }
+  html body .lg-next { right: 0; }
+
+}
+
+@media (max-width: 800px) {
+  /* search options display full width, not 50% across */
+  .form-section { width: 100%; display: block; }
+  /* search option labels go to 50%, placing their midpoint at the centerline */
+  /* or maybe not?? */
+  .search_box label { width: 30%; }
+
+  /* handy search button under the search fields */
+  .mobile_search_button { display: block; margin:auto; }
+}
+
+@media (max-width: 700px) {
+
+  /* shrink the header */
+  h1.header { font-size: 1.3em; }
+
+  /* shrink the menu tabs */
+  /* .navbar { margin-left: 0.3em; } */
+  .nav > div > span,
+  .nav > a { padding: 3px 8px; margin-right:4px; }
+
+  /* Adjust search box to fit */
+  .search_box { padding: 0.5em; }
+
+  /* Keywords goes full width with button below */
+  .keywords_search { width: 100%; }
+  form button { display:block; margin: auto; margin-bottom: 20px; }
+
+}
+
+@media (max-width: 550px) {
+
+  /* shrink the header a bit more */
+  header { padding: 0.6em 4px 0 4px; }
+
+  /* shrink the menu tabs even more! */
+  /* .navbar { margin-left: 0.2em; } */
+  .nav > div > span,
+  .nav > a { font-size: 0.9em; padding: 3px 6px; margin-right:2px; }
+
+  /* Content pushes out to the sides, remove rounded corners */
+  .main-content { margin: 0; padding: 0.8em; border: none; border-top: 1px solid #4D4D4D; border-radius: 0;  }
+  .questions { margin: 1em 0; padding: 0.8em; border: none; border-radius: 0; }
+
+  /* On the Entity page, shrink labels */
+  /* .main-content > label.info { width: 120px; }
+  .main-content > div.info { width: calc( 100% - 130px ); }  */
+
+  /* // rearrange genericInfo label / value pairs on tiny screens */
+  .main-content > label.info {
+    padding-left: 0;
+    text-align: left;
+    width: 100%;
+  }
+  .main-content > div.info {
+    padding-left: 1em;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  label.info {
+    padding-left: 1em;
+    text-align: left;
+    width: 100%;
+  }
+
+  div.info {
+    padding-left: 2em;
+    max-width: 100%;
+    width: 100%;
+    margin-top: 2px;
+  }
+
+}
