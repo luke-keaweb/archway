@@ -16,6 +16,10 @@ The code in this project retrieves search results from the backend of the Archiv
 
 Please use this access responsibly.
 
+## Usage
+
+This project consists of PHP code that generates a website capable of performing and displaying searches of Archives NZ.  You will need a working Linux server and some technical knowledge of webservers to setup this project.
+
 ## Server requirements: 
 
 * Apache2
