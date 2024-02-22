@@ -18,14 +18,10 @@ This is a work in progress and my first public GitHub project.  Please don't hes
 ## Setup Instructions
 
 * Clone this project into a folder on your server (eg /var/www/archway)
-* Run 'composer require'
-
-* Set Apache to serve the /public folder
-
+* Run 'composer update' inside the folder
+* Set /public as the document root in Apache
 * Download SQL file from https://archway.howison.co.nz/db/archway.sql and import it into a local MySQL database
-
-* Copy .env.example as .env and add local environmental details (domain, MySQl connection details)
-
+* Copy .env.example as .env and add local environment details (domain, MySQl connection details)
 * Test if it's working!
 
 ## Files and permissions

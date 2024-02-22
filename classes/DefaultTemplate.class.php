@@ -72,7 +72,7 @@ class DefaultTemplate {
 
     $html .= '<meta property="og:title" content="'.Template::title().'" />';
     $html .= '<meta property="og:description" content="An alternative search system for Archives NZ, inspired by the beautiful simplicity of the beloved Archway system" />';
-    $html .= '<meta property="og:image" content="https://archway.howison.co.nz/assets/styles/favicon/android-chrome-512x512.png" />';
+    $html .= '<meta property="og:image" content="'.getArchDomain().'/assets/styles/favicon/android-chrome-512x512.png" />';
 
     $html .= '</head>';
 

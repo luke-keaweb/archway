@@ -219,8 +219,12 @@ class Spider {
   function cache() {
 
 		$relative = '../';
-  	$cache_dir = $relative.'cache/'.$this->cache_context;
 		
+		$base_cache_dir = $relative.'cache/';
+		if (!is_dir($base_cache_dir))
+		  mkdir($base_cache_dir, 0777, true);	
+		
+  	$cache_dir = $relative.'cache/'.$this->cache_context;
 		if (!is_dir($cache_dir))
 		  mkdir($cache_dir, 0777, true);
 	

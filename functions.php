@@ -196,6 +196,11 @@ function highlightAndTruncateTitle($title, $keyword_string) {
 
 function getArchDomain() {
 
+  // retrives a FQDN from the .env file
+  // eg https://archway.howison.co.nz
+
+  // NOTE: should OMIT trailing slash
+
   if ( !defined('HTTP_ROOT') )
     throw new Exception('HTTP_ROOT is not defined in .env!');
 
