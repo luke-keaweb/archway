@@ -12,7 +12,7 @@ This is a work in progress and my first public GitHub project.  Please don't hes
 
 The code in this project retrieves search results from the backend of the Archives NZ website, with the understanding that this information is covered by Creative Commons BY 2.0, as stated on the Archives NZ website at https://www.archives.govt.nz/copyright
 
-"In cases where we have already published archival material on the archives.govt.nz website or have made it digitally available on Collections search, it is covered by a Creative Commons BY 2.0 license, unless otherwise stated. You are then welcome to use it without seeking permission."
+> "In cases where we have already published archival material on the archives.govt.nz website or have made it digitally available on Collections search, it is covered by a Creative Commons BY 2.0 license, unless otherwise stated. You are then welcome to use it without seeking permission."
 
 Please use this access responsibly.
 
@@ -27,10 +27,10 @@ Please use this access responsibly.
 
 * Decide where this project will reside on your server (eg /var/www/archway)
 * Clone the code with 'git clone https://github.com/luke-keaweb/archway.git'
-** By default the project will be placed into a folder /archway, relative to the current directory
+  * By default the project will be placed into a folder /archway, relative to the current directory
 * Run 'composer update' inside the folder
 * Set /public as the document root in Apache 
-** (for example, the full document root path would be /var/www/archway)
+  * (for example, the full document root path would be /var/www/archway)
 * Download the SQL file from https://archway.howison.co.nz/db/archway.sql and import it into a local MySQL database.  Take note of the MySQL user, password and database name.
 * Copy .env.example as .env and add local environment details (eg the domain, MySQl details as per the previous point)
 * Test if it's working!
