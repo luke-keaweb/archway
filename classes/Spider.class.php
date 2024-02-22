@@ -221,21 +221,31 @@ class Spider {
 		$relative = '../';
 		
 		$base_cache_dir = $relative.'cache/';
-		if (!is_dir($base_cache_dir))
-		  mkdir($base_cache_dir, 0777, true);	
 		
-  	$cache_dir = $relative.'cache/'.$this->cache_context;
-		if (!is_dir($cache_dir))
-		  mkdir($cache_dir, 0777, true);
+		// check the base cache dir exists, try to create it if necessary
+		if (!is_dir($base_cache_dir)) {
+			$success = mkdir($base_cache_dir, 0777, true);
+			if (!$success)
+				throw new Exception('Cache directory could not be created!');
+		}
+		
+		// check the base cache dir is writable
+		if (!is_writable($base_cache_dir))
+			throw new Exception('Cache directory exists but is not writable!');
+		
+		// check the specific cache context subdir exists, try to create it if necessary
+  	$cache_dir = $base_cache_dir . $this->cache_context;
+		if (!is_dir($cache_dir)) {
+			$success = mkdir($cache_dir, 0777, true);
+			if (!$success)
+				throw new Exception('Cache subdirectory ('.$this->cache_context.') could not be created!');
+		}
 	
 		$storage = new Nette\Caching\Storages\FileStorage( $cache_dir );
 							
     // should we use the real cache, or skip caching?					
 		// $storage = new Nette\Caching\Storages\DevNullStorage;
-    
-    // NOTE:  you may need to change owner so Apache can write to the cache dir, eg 
-    // chown www-data:www-data cache
-    
+        
     return new Nette\Caching\Cache( $storage );
                 
   } // end of cache
